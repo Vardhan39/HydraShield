@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-main: #f8fafc;
+    --text-main: #0f172a;
+    --card-bg: rgba(255, 255, 255, 0.7);
+    --card-border: rgba(226, 232, 240, 0.8);
+    --accent: #4f46e5;
+    --accent-hover: #4338ca;
+    --muted: #64748b;
+    --bg-glow: radial-gradient(circle at 50% 50%, rgba(79, 70, 229, 0.08) 0%, transparent 70%);
+  }
+
+  [data-theme='dark'] {
+    --bg-main: #020617;
+    --text-main: #f1f5f9;
+    --card-bg: rgba(15, 23, 42, 0.5);
+    --card-border: rgba(30, 41, 59, 0.8);
+    --accent: #6366f1;
+    --accent-hover: #818cf8;
+    --muted: #94a3b8;
+    --bg-glow: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-image: var(--bg-glow);
+    background-attachment: fixed;
+    overflow-x: hidden;
+    transition: background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s ease;
+    @apply antialiased;
+  }
+
+  * {
+    transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.5s ease,
+                transform 0.3s ease,
+                opacity 0.5s ease;
+  }
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  @apply rounded-2xl shadow-sm transition-all duration-300;
+}
+
+[data-theme='dark'] .card {
+  @apply backdrop-blur-md shadow-2xl shadow-black/20;
+}
+
+.card:hover {
+  border-color: var(--accent);
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: white;
+  @apply font-semibold px-5 py-2.5 rounded-xl transition-all duration-200 active:scale-95 flex items-center justify-center gap-2 shadow-sm;
+}
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+}
+
+.btn-secondary {
+  @apply border border-slate-200 dark:border-slate-800 font-medium px-5 py-2.5 rounded-xl transition-all duration-200 active:scale-95 flex items-center justify-center gap-2;
+}
+
+.preset-chip {
+  @apply px-4 py-2 rounded-lg text-xs font-semibold border transition-all cursor-pointer;
+}
+.preset-chip-active {
+  background-color: var(--accent);
+  color: white;
+  border-color: var(--accent);
+  @apply shadow-lg;
+}
+.preset-chip-inactive {
+  @apply bg-slate-100 dark:bg-slate-900 text-slate-500 border-transparent hover:border-slate-300 dark:hover:border-slate-700;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  @apply w-full h-1.5 bg-slate-200 dark:bg-slate-800 rounded-full outline-none;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--accent);
+  @apply w-5 h-5 rounded-full cursor-pointer shadow-lg hover:scale-110 active:scale-95 transition-transform;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-700 rounded-full;
+}
+
+
+.lab-header {
+  @apply font-black uppercase tracking-tighter;
+}
+
+.lab-subtext {
+  @apply text-[0.7rem] font-black uppercase tracking-[0.4em] text-slate-500 opacity-50;
+}

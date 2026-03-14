@@ -1,0 +1,15 @@
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
+frontend/node_modules
+backend/node_modules
+backend/uploads/*
+!backend/uploads/.gitkeep
+.env
+.env.*
+.vscode
+.idea
+build
+*.log

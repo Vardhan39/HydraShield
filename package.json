@@ -1,0 +1,14 @@
+{
+  "name": "road-safety-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "LSTM-Based Self-Adaptive Driving Stability Prediction under Water-Logged Road Conditions in Indian Traffic",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix frontend\" \"npm run dev --prefix backend\"",
+    "postinstall": "npm install --prefix frontend && npm install --prefix backend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}
+
