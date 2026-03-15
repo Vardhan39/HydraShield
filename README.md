@@ -162,6 +162,6 @@ Integration with smart city transportation systems
 
 👨‍💻 Author
 
-G ragna Vardhan
+G Pragna Vardhan
 Computer Science and Engineering
 Koneru Lakshmaiah Education Foundation
